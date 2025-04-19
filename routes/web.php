@@ -31,11 +31,15 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/produk/{produk}/update-stok', [ProdukController::class, 'updateStok'])->name('produk.update-stok');
 
     Route::delete('/produk/{produk}', [ProdukController::class, 'destroy'])->name('produk.destroy');
+    Route::get('/produk/export/excel', [ProdukController::class, 'exportExcel'])->name('produk.export.excel');
+
 });
 
 
 
 Route::resource('users', UserController::class);
+Route::get('/user/export/excel', [UserController::class, 'exportExcel'])->name('users.export.excel');
+
 
 
 Route::resource('penjualan', PenjualanController::class);

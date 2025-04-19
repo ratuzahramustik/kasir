@@ -14,11 +14,20 @@
         <span class="text-gray-700">Produk</span>
     </div>
 
+    
     <!-- Header -->
     <div class="mb-5 mt-6">
         <div>
             <h2 class="text-2xl font-bold">Produk</h2>
         </div>
+        <div class="flex justify-between items-center mb-4">
+            <form action="{{ route('produk.export.excel') }}" method="GET">
+                <button type="submit"
+                    class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition text-base">
+                    Export Excel
+                </button>
+            </form>
+
         @if (Auth::user()->role === 'admin')
         <div class="mt-10 flex justify-end">
             <a href="{{ route('produk.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">

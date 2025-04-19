@@ -137,7 +137,7 @@
                         <tbody>
                             @foreach ($item->detailpenjualans as $detail)
                                 <tr class="border-b">
-                                    <td class="py-2">{{ $detail->produk->produk }}</td>
+                                    <td class="py-2">{{ $detail->produk->nama_produk }}</td>
                                     <td class="py-2 text-center">{{ $detail->qty }}</td>
                                     <td class="py-2 text-right">Rp. {{ number_format($detail->produk->harga, 0, ',', '.') }}</td>
                                     <td class="py-2 text-right">Rp. {{ number_format($detail->produk->harga * $detail->qty, 0, ',', '.') }}</td>

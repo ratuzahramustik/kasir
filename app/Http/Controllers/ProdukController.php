@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ProdukExport;
+
+
 
 class ProdukController extends Controller
 {
@@ -120,6 +124,9 @@ public function getImageUrlAttribute()
         : 'https://via.placeholder.com/150';
 }
 
-    
+public function exportExcel()
+    {
+        return Excel::download(new ProdukExport, 'data_produk.xlsx');
+    }
 
 }

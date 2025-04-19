@@ -13,6 +13,13 @@
 
 <h2 class="text-xl font-bold mb-4"> User</h2>
 
+<form action="{{ route('users.export.excel') }}" method="GET">
+    <button type="submit"
+        class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition text-base">
+        Export Excel
+    </button>
+</form>
+
 <div class="flex justify-end mb-4 mr-14">
     <a href="{{ route('users.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Tambah User</a>
 </div>
